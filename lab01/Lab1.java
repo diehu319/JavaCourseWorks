@@ -16,3 +16,9 @@ public class Lab1{
     System.out.println("2 * 3 - 4 * 5 = " + b.multiply(c).subtract(d.multiply(e)));
   }
 }
+//This program prints  out:
+//1 + 2 = 3 
+//2 * 3 = 6 
+//(1 - (2 - (3 - 4))) = -2 
+//1 - 2 - 3 - 4 = -8 
+//2 * 3 - 4 * 5 = -14 
