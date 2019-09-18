@@ -13,7 +13,7 @@ public class Student
   }
   public int addQuiz(int num){
     quiz += 1;
-    score += num
+    score += num;
   }
   public int getTotalScore(){
     return score;
