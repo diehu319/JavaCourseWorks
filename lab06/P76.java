@@ -38,3 +38,10 @@ public class P76{
         } 
     } 
 }
+//dont know why my output is different from the text
+//My output:
+//9 3 22 16 15
+//2 21 20 14 8
+//25 19 13 7 1
+//18 12 6 5 24
+//11 10 4 23 17
