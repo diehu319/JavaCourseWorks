@@ -1,18 +1,20 @@
-//E7.11
-import java.util.*; 
+//E7.22
+import java.util.*;
+import java.util.ArrayList;
+
 public class Sequence{
-  private int[] values;
-  public Sequence(int size) {values = new int[size];}
-  public void set(int i, int n) {values[i] = n;}
-  public int get(int i){return values[i];}
-  public int size(){return values.length;}
-  public boolean equals(Sequence other){
-    if (values.length != other.values.length) return false;
-    else{
-      for (int i = 0; i < other.values.length; i++){
-        if (other.values[i] != this.values[i]) return false;
-      }
-    return true;
+  private ArrayList<Integer> values;
+  public Sequence() { values = new ArrayList<Integer>();}
+  public void add(int n) { values.add(n); }
+  public String toString() { return values.toString();}
+  public Sequence append(Sequence other){
+    Sequence a = new Sequence();
+    for (int i = 0; i < values.size(); i++){
+      a.add(values.get(i));
     }
+    for (int j = 0; j < other.values.size(); j++){
+      a.add(other.values.get(j));
+    }
+    return a;
   }
 }
