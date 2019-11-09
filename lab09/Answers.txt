@@ -1,0 +1,3 @@
+The big-Oh time of radix sort in terms of n and d is O(d*n)
+
+The radix sort is preferable to merge sort when we have log2(n) bits for every digit.
