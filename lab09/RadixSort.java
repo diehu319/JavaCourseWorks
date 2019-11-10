@@ -4,14 +4,14 @@ import java.util.*;
 public class RadixSort{
   
   public static void main(String[] args){
-    int arr[] = {19,2,3,55,77,31,98,5};
+    int arr[] = {11,98,11,23,4,5,61,223,452,5};
     int n = arr.length;
     radixsort(arr,n);
     for (int i = 0; i < n; i++){
-      System.out.print(arr[i] + " ");
+      //System.out.print(arr[i] + " ");
     }
   }
- 
+  
   static void radixsort(int arr[], int n){
     int m = arr[0];
     for (int i = 1; i < n; i++){
@@ -24,9 +24,11 @@ public class RadixSort{
     
       for (int i = 0; i < n; i++){
         count[(arr[i]/exp)%10]++; //when arr[i]/exp%10 = 1, count[1]+= 1.
+        System.out.println(i + " " + arr[i] + " " + count[i] + " " + exp);
       }
       for (int i = 1; i < 10; i++){
         count[i] += count[i-1];
+        System.out.println(i + " " + arr[i] + " " + count[i] + " " + exp);
       }
       for (int i = n - 1; i >= 0; i--){
         output[count[(arr[i]/exp)%10]-1] = arr[i];
