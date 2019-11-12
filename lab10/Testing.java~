@@ -1,0 +1,23 @@
+public class Testing{
+  public static void main(String[] args){
+    
+    //Calls empty List method
+    LispList list1 = new EmptyList();
+    System.out.println("[" + list1 + "]");
+    
+    //print A into an empty list
+    LispList list2 = new NonEmptyList("A", new EmptyList());
+    System.out.println(list2);
+    
+    //takes three non empty list and prints the value
+    LispList list3 = new NonEmptyList("A", new NonEmptyList("B", new NonEmptyList("C", new EmptyList())));
+    System.out.println(list3);
+    
+    //consolidate list3 and list4
+    LispList list4 = LispList.NIL.cons("E").cons("D").cons("C").cons("B").cons("A");
+    System.out.println(list4);
+    
+    //merging list3 and list4
+    System.out.println(list3.merge(list4));
+  }
+}
