@@ -1,0 +1,50 @@
+11/11 Reading-Chapter 17
+
+1. To begin reading a text file in java program, you must construct a File object with the name of the input file like: 
+  File inputFile = new File("input.txt");
+
+2. To write output to a file, you must construct a PrintWriter object with the desired file name like:
+  PrintWriter out = new PrintWriter("output.txt");
+  The PrintWriter class is an enchancement of the PrintStream class that contains System.out, which is a PrintStream object.
+  
+3. When done processing a file, you must close the Scanner or PrintWriter like:
+  in.close(); // Scanner in = new Scanner(inputFile);
+  out.close(); // PrintWriter
+  If the PrintWriter isn't closed before exit the program, some of the output might not be writtern to the disk file.
+  
+4. If the input file for a Scanner doesn't exist, a FileNotFoundException occurs when the Scanner object is constructed as well as the PrintWriter.
+   To achieve this, the main method needs to be labeled with a throws declaration like:
+  public static void main(String[] args) throws FileNotFoundException
+  
+5. When specifiy a file name as a string literal, and the name contains backslash characters, each backslash must supply twice like:
+  File inputFile - new File ("c:\\homework\\input.dat");
+  
+6. When constructing a PrintWriter with a string, it writes to a file like:
+  PrintWriter out - new PrintWriter("output.txt");
+  Scanner in - new Scanner("input.txt"); // Error
+  Scanner in - new Scanner(new File("input.txt")); // OK
+  
+7. When reading web pages:
+  String address - "http://horstmann.com/index.html";
+  URL pageLocation - new URL(address);
+  Scanner in - new Scanner(pageLocation.openStream());
+   The URL constructor and the opernStream method can trhow an IOException, so the main method needs to tag with throws IOException.
+   The URL class is contained in the java.net package.
+   
+8. When scanning a string, a Scanner object can be used to read the cahraacters from a string:
+  Scanner lineScanner = new Scanner(line);
+   Then lineScanner can be used like any other Scanner object, reading words and numbers:
+  String countryName = lineScanner.next(); // Read first word
+  while (!lineScanner.hasNextInt()){ // Add more words to countryName until number encountered
+    countryName = countryName + " " + lineScanner.next();
+    }
+  int populationValue = lineScanner.nextInt();
+  
+9. Converting String to Number: from "303824646" to interger value 303824646, use the Integer.parseInt method:
+  int populationValue = Integer.parseInt(population); // populationValue is the interger 30382464
+   To convert a string containing floating point digits to its floating-point value, use the Double.parseDouble method:
+  double price = Double.parseDouble(input); // price os the floating-point number 3.95
+   Not any additional characters except integer and string are contained in the argument is allowed. If that is the case, use the trim method:
+  int populationValue = Integer.parseInt(population.trim());
+  
+10. To avoid exceptions, use the hasNextInt method to screen the input when reading an integer.
