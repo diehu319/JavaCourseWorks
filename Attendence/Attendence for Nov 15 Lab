@@ -1,0 +1,31 @@
+Chapter 18
+
+1. Generic Programming is the creation of programming constructs that can be used with many different types.
+   For example, ArrayList class used the technique of generic programming, so that the user can form array lists
+   that collect elements of different types, such as ArrayList<String>, ArrayList<BankAccount>.
+
+2. A generic class has one or more type parameters. Each of these classes has a type parameter for specifying 
+   the type if its elements. For example, an ArrayList<String> stores String elements.
+   
+3. Type parameters can be instantiated with class or interface types. In order to use a generic class, you need
+   to instantiate the type parameter, thart is, supply an actual type. You can supply any class or interface type,
+   for example: ArrayList<BankAccount>, ArrayList<Measurable>
+   
+4. However, any of the eight primitive types for a type parameter cannot be subsituted, it would cause an error to 
+   declare an ArrayList<double>, instead of that, use ArrayList<Double>.
+   
+5. When you instantiate a generic class, the type that you supply replaces all occurrences of the type variable in 
+   the declaration of the class. For example, the add method for ArrayList<BankAccount> has the type variable E 
+   replaced with the type BankAccount: public void add(BankAccount element)
+   
+6. Supply the type parameters of a generic method between the modifiers and the method return type.
+
+7. When calling a generic method, you dont need to instantiate the type paramters.
+
+8. Type parameters can be constrained with bounds. We can constrain the type of elements, requiring that they type
+   implement the Measurable type. In Java, this is achieved by adding the clause extends Measurable after the type parameter:
+   public static <E extends Measurable> double average(ArrayList<E> objects)
+   
+9. Inheritance of type parameters does not lead to inheritance of generic classes.
+
+10. You cannot construct objects or arrays of a generic type.
