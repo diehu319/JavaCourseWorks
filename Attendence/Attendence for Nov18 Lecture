@@ -1,21 +1,36 @@
 Chapter 19
 
-1.
+1. A stream  does not store its data. The data comes from elsewhere, prehaps a collection, a file, a 
+   database, or a data source on the Internet.
 
-2.
+2. A stream is an immutable sequence of values that are processed lazlly. Lazy processing means to defer
+   operations until they are needed, and to skip those that are not needed.
 
-3.
+3. To do stream processing, you need a stream. The simplest way of getting one is with the static Stream.of
+   method. For example:
+      Stream<String>words = Stream.of("Mary", "had", "a", "little", "lamb");
+      Stream<Integer>digits = Stream.of(3,1,4,1,5,9);
+   With the same method, you can turn an array of objects into a stream:
+      Integer[] digitArray = {3,1,4,1,5,9};
+      Stream<Integer> digitStream = Stream.of(digitArray);
+   The Stream.of static method and the Stream methods of collection classes yield streams. 
+   (Stream is a generic type)
 
-4.
+4. Parallel stream causes stream operations to be distributed over the available processors.
 
-5.
+5. To turn a stream into an array or collection, use the toArray or collect methods.
 
-6.
+6. To make an infinite stream, the generate method could be used.
 
-7.
+7. The filter method yleids a stream of all elements fulfilling a condition.
 
-8.
+8. Once you obtain a result from a stream, by calling a method such as toArray or collect, the stream is
+   "used up", and you can no longer apply other operations to it. To avoid this error, it is a good idea to
+   write stream operations as a "pipeline" that starts with stream creation, is followed by transformations,
+   and ends with collecting a result.
 
-9.
+9. A lambda expression consists of one or more parameter variables, an arrow ->, and an expression or block
+   yielding the result.
 
-10.
+10. A functional interface is an interface with a single abstract method. A lambda expression can be converted
+   to an instance of a functional interface.
