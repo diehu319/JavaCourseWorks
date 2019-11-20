@@ -1,21 +1,37 @@
 Chapter 20
 
-1.
+1. In Java, you build up user interfaces by adding componenets into containers such as panels. Each container has its
+   own layout manager, which determines how components are laid out.
+   User-Interface components are arranged by placing them inside containers. Containers can be placed inside larger
+   containers.
+   Each container has a layout manager that directs the arrangement of its components.
+   Three userful layout managers are the border layout, flow layout, and grid layout.
 
-2.
+2. By default, a JPanel uses a flow layout which simply arranges its components from left to right and starts a new row 
+   when there is no more room in the current row. The border layout groups conponenets into five areas: center, north,
+   south, west, and east. Each area can hold a single componenet, or it can be empty.The grid layout manager arranges 
+   components in a grid with a dixed number of rows and columns. All componenents are resized to same width and height.
 
-3.
+3. The content pane of a frame has a border layout by default. A panel has a flow layout by default.
+   When adding a component to a container with the border layout, specify the NORTH, SOUTH, WEST, EAST, or CENTER position.
+   For example:
+      panel.add(component, BorderLayout.NORTH);
+   When creating a grid layout, first supply the number of rows and columns in the constructor, then add the components,
+   row by row from left to right.
 
-4.
+4. As you add more user-interface components to a frame, the frame can get quite complex. Your programs will become easier
+   to understand when use inheritance for complex fram by design a subclass of JFrame and store the componenets as instance
+   variables in the constructor of the subclass as initialized.
 
-5.
+5. By default, components have zero width and height
 
-6.
+6. Programmers can combine two classes by adding the main method to the frame classes.
 
-7.
+7. Use a JTexttFiled component for reading a signle line of input. Place a JLabel next to each text field.
 
-8.
+8. A graphical user interface is made up of components such as buttons and text fields. The Swing library uses contains
+   and layout managers to arrange these components. 
 
-9.
+9. A frame contains a menu bar. The menu bar contains menus. A menu contains submeanus and menu items.
 
-10.
+10. Menu items generate action events.
