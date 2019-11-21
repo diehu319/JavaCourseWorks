@@ -1,8 +1,8 @@
 //P6.9
 // Generate the lower point of the needle. Its x-coordinate is irrelevant, and you may assume its y-coordinate
-// ylow to be any random number between 0 and 2. The angle ¦Ábetween the needle and the x-axis can be any value 
-// between 0 degrees and 180 degrees (¦Ğ radians). The upper end of the needle has y-coordinate
-//    yhigh = ylow + sin¦Á
+// ylow to be any random number between 0 and 2. The angle Â¦Ãbetween the needle and the x-axis can be any value 
+// between 0 degrees and 180 degrees (in radians). The upper end of the needle has y-coordinate
+//    yhigh = ylow + sinÂ¦Ã
 // The needle is a hit if yhigh is at least 2, as shown in Figure 11. Stop after 10,000 tries and print the 
 // quotient tries/hits.
 
