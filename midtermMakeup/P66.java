@@ -31,11 +31,11 @@ public class P66{
       if (turn == 0) { // If it's the human's turn 
         System.out.println("Enter the number of marbles to take: "); 
         myTurn = in.nextInt();
-        if (myTurn <= n / 2 || (myTurn == 1 && n == 1)) { // Ensure that we are not taking too many
+        if ((myTurn <= n / 2 && myTurn >= 1) || (myTurn == 1 && n == 1)) { // Ensure that we are not taking too many
           n = n - myTurn;
           turn = 1; // then computer's turn
         } else {
-          System.out.println("You're taking too many!");
+          System.out.println("You're taking too many or less than one! The amount of marbles won't change.");
         }
         System.out.println("You took " + myTurn + " marbles");
       }  else { //if it's the computer's turn
