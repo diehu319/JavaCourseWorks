@@ -22,7 +22,7 @@ public class P66{
     int smart = r.nextInt(2);// 1 is smart and 0 is stupid
     System.out.println("The computer is " + (smart == 1 ? "smart" : "stupid"));
     // if the computer is in stupid mode, it will draw between [1, n/2] = 1 + [0, n/2 - 1]
-    int compTurn = 0; // How many marbles the computer will take
+    int compTurn = 0; // Marbles the computer will take
         
     Scanner in = new Scanner(System.in);
     int myTurn = 0;
@@ -39,27 +39,24 @@ public class P66{
         }
         System.out.println("You took " + myTurn + " marbles");
       }  else { //if it's the computer's turn
-         // Even if the computer is smart or stupid, if there is only one or two or three marbles left,
-         // the only move that can be made is to take 1 marble
+         // Only one or two or three marbles left,
+         // The only move that can be made is to take 1 marble
         if (n == 1 || n == 2 || n == 3) {
           n--;
         } 
         else if (smart == 0) { // If the computer is stupid
-          if (n == 1) { // We can only remove one marble if there is only one marble left
+          if (n == 1) { // Only remove one marble if there is only one marble left
             compTurn = 1;
           } else {
             compTurn = 1 + r.nextInt((n / 2) - 1); // Range from [1, n / 2] = 1 + [0, n/2 - 1]
             n = n - compTurn;
           }
-        }else { // If the computer is smart, things are a little bit more difficult
-                // In smart mode, we want the computer to make n one of the following:
+        }else { // If the computer is smart
+                // In smart mode, the computer to make n one of the following:
                 // [3, 7, 15, 31, 63]
-                // We can do this by comparing n to the powers. We'll start with the biggest (63) and 
-                // work down until we find the biggest power of two - 1 that is less than n. We then set 
-                // the computer's move to whatever will make it that number
           int[] pows = new int[] {3, 7, 15, 31, 63};
           for (int i = 4; i >= 0; i--) {
-            if (pows[i] < n) { // If we run into this condition, we have found the biggest pow of two that is less than n.
+            if (pows[i] < n) { // Found the biggest pow of two that is less than n.
               compTurn = n - pows[i]; 
               break;
             }
@@ -73,5 +70,6 @@ public class P66{
     }
     // At the time when n = 0, whoever's turn it is now has one since that last player took the last marble
     System.out.println((turn == 1 ? "Computer" : "Human") + " has won");
+    in.close();
   }
 }
