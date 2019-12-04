@@ -21,6 +21,12 @@
       <sourceFolder url="file://$MODULE_DIR$/lab10" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/midtermMakeup" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Stage01" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment09" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment11" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment12" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Stage02" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Stage03" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
