@@ -3,6 +3,8 @@ public class E1313 {
     public static void main(String[] args){
         System.out.println(squareRoot(141));
         System.out.println(squareRoot(16));
+        System.out.println(squareRoot(0));
+        System.out.println(squareRoot(-9));
     }
 
     //Helper
