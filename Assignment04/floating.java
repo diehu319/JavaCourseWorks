@@ -8,10 +8,8 @@ public class floating{
         System.out.println("Enter two floating-point numbers: ");
         double x = in.nextDouble();
         double y = in.nextDouble();
-        x = Math.round(x * 1000);   //two decimal places
-        x = x / 1000;
-        y = Math.round(y * 1000);
-        y = y / 1000;
+        x = Math.round(x * 100);   //two decimal places
+        y = Math.round(y * 100);
         if (x == y) System.out.println("They are the same up to two decimal places.");
         else System.out.println("They are different.");
     }
