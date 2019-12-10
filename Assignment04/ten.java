@@ -3,17 +3,20 @@ import java.util.*;
 
 public class ten{
     public static void main(String[] args){
-        Random n = new Random();
-        int[] array = new int[10]; //created an array of 10 index
-        int[] newArray = new int[10];
-        int index = 0;//set index = 0 for the while loop
-    
-        while (index < array.length){
-            int number = 1 + n.nextInt(100);//+1 because nextInt includes 0 and excludes 100
-            for (int i = 0; i < index; i++){
-                int item = array[i];
-                System.out.println(Arrays.toString(array));
+        int[] a = new int[10];
+        Random generator = new Random();
+        for(int i = 0 ; i < a.length; i++){
+            int number = 1 + generator.nextInt(100);
+            a[i] = number;
+        }
+        for(int j = 0; j < a.length; j++) {
+            int temp1 = a[j];
+            for(int pos = 0; pos < a.length; pos++) {
+                int temp2 = a[pos];
+                if( temp1 == temp2 && j != pos)
+                    a[j] = 1 + generator.nextInt(100);
             }
         }
+        System.out.println(Arrays.toString(a));
     }
 }
