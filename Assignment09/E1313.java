@@ -1,10 +1,11 @@
 import java.math.*;
+import java.util.Scanner;
 public class E1313 {
     public static void main(String[] args){
-        System.out.println(squareRoot(141));
-        System.out.println(squareRoot(16));
-        System.out.println(squareRoot(0));
-        System.out.println(squareRoot(-9));
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter your number: ");
+        double x = input.nextDouble();
+        System.out.println("The square root of " + x + " is " + squareRoot(x));
     }
 
     //Helper
