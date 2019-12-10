@@ -1,33 +1,80 @@
 //E519
-import java.util.Scanner;
-public class Card{
+import java.util.*;
+public class Card {
+
     public static void main(String[] args){
         getDescription();
     }
-    
-    static String getDescription(){
+
+    static String getDescription() {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the card name notation: ");
         String input = in.nextLine();
-        String suit = input.substring(1,2);
+        in.close();
+        String suit = input.substring(1);
         String value = input.substring(0,1);
-        String sum = "";
-        String error = "Input Format Incorrect or Invalid Input Value";
-        if (value.equals("A")) sum = "Ace of ";
-        else if (value.eqauls("J")) sum = "Jack of ";
-        else if (value.equals("Q")) sum = "Queen of ";
-        else if (value.equals("K")) sum = "King of ";
-        else if (bool ("2","3","4","5","6","7","8","9","10").contains(value)) sum = value + " of ";
-        else sum = "";
-        if (suit.equals("D")) sum += "Diamonds";
-        else if (suit.equals("H")) sum += "Hearts";
-        else if (suit.equals("S")) sum += "Spades";
-        else if(suit.equals("Clubs")) sum += "Clubs";
-        else sum = "";
-        if (sum != "") return sum;
-        else return error;
+        String result;
+        if(suit.equals("D")){
+            if(value.equals("J")){
+                result = "Jack of Diamonds";
+                return result;
+            }else if (value.equals("Q")){
+                result = "Queen of Diamonds";
+                return result;
+            }else if (value.equals("K")){
+                result = "King of Diamonds";
+                return result;
+            }else {
+                result = value + " of Diamonds";
+                return result;
+            }
+        }
+        else if(suit.equals("H")){
+            if(value.equals("J")){
+                result = "Jack of Hearts";
+                return result;
+            }
+            else if (value.equals("Q")){
+                result = "Queen of Hearts";
+                return result;
+            }else if (value.equals("K")){
+                result = "King of Hearts";
+                return result;
+            }else {
+                result = value + " of Hearts";
+                return result;
+            }
+        }else if(suit.equals("S")){
+            if(value.equals("J")){
+                result = "Jack of Spades";
+                return result;
+            }else if (value.equals("Q")){
+                result = "Queen of Spades";
+                return result;
+            }else if (value.equals("K")){
+                result = "King of Spades";
+                return result;
+            }else {
+                result = value + " of Spades";
+                return result;
+            }
+        }else if(suit.equals("C")){
+            if(value.equals("J")){
+                result = "Jack of Clubs";
+                return result;
+            }else if (value.equals("Q")){
+                result = "Queen of Clubs";
+                return result;
+            }else if (value.equals("K")){
+                result = "King of Clubs";
+                return result;
+            }else {
+                result = value + " of Clubs";
+                return result;
+            }
+        }else {
+            result = "Unkown";
+            return result;
+        }
     }
 }
-
-
-//I refer the idea from http://forum.codecall.net/topic/59934-card-program-help/  But my code didn't work out, I will go to office hour for help soon.
