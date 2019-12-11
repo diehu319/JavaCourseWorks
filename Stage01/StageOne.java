@@ -48,9 +48,16 @@ public class StageOne <T extends Comparable<T>> {
         StageOne<Integer> root = new StageOne<Integer>(3);
         root.insert(5);
         root.insert(2);
-        root.insert(3);
+        root.insert(4);
         root.insert(1);
-        System.out.println(root.find(2) + "Expected: 2");
-        System.out.println("The efficiency of my code is O(n).");
+        System.out.println("The second node of the first tree has a value of " + root.find(2) + ", Expected: 2");
+
+        StageOne<String> newRoot = new StageOne<String>("c");
+        newRoot.insert("b");
+        newRoot.insert("a");
+        newRoot.insert("d");
+        newRoot.insert("e");
+        System.out.println("The third node of the second tree has a value of " + newRoot.find(3) + ", Expected: c");
+        System.out.println("\nThe efficiency of my code is O(n).");
     }
 }
