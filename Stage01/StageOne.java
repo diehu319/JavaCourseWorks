@@ -51,5 +51,6 @@ public class StageOne <T extends Comparable<T>> {
         root.insert(3);
         root.insert(1);
         System.out.println(root.find(2) + "Expected: 2");
+        System.out.println("The efficiency of my code is O(n).");
     }
 }
