@@ -50,14 +50,18 @@ public class StageOne <T extends Comparable<T>> {
         root.insert(2);
         root.insert(4);
         root.insert(1);
+        long startTime = System.nanoTime();
         System.out.println("The second node of the first tree has a value of " + root.find(2) + ", Expected: 2");
+        long endTime = System.nanoTime();
+        System.out.println("\nThe find method took " + (endTime - startTime) + " nanoseconds.");
+
 
         StageOne<String> newRoot = new StageOne<String>("c");
         newRoot.insert("b");
         newRoot.insert("a");
         newRoot.insert("d");
         newRoot.insert("e");
-        System.out.println("The third node of the second tree has a value of " + newRoot.find(3) + ", Expected: c");
-        System.out.println("\nThe efficiency of my code is O(n).");
+        System.out.println("\nThe third node of the second tree has a value of " + newRoot.find(3) + ", Expected: c");
+        System.out.println("\nThe efficiency of my code is O(n). ");
     }
 }
