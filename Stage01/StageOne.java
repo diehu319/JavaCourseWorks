@@ -29,15 +29,6 @@ public class StageOne <T extends Comparable<T>> {
         }
     }
 
-    public static <T extends Comparable<T>> void inOrder (StageOne<T> root, List<T> a){
-        if (root == null) return;
-        else{
-            inOrder(root.left, a);
-            a.add(root.value); // the nodes in the left < in the right, so add nodes in the left first.
-            inOrder(root.right, a);
-        }
-    }
-
     public T find(int k){
         if (k == 1 + StageOne.size(this.left)) return this.value;
         else if (k <= StageOne.size(this.left)) return this.left.find(k);
