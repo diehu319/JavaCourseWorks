@@ -37,7 +37,7 @@ public class Sequence711_713{
     //E7.13
     public boolean isPermutationOf(Sequence711_713 other){
         boolean result = false;
-        if (this.size() != other.size()) result = false; //if length is not equaled, return false
+        if (this.size() != other.size()) return false; //if length is not equaled, return false
         else{
             int sum1 = 0, sum2 = 0, mult1 = 1, mult2= 1;
             for (int i = 0; i < this.size(); i++){
