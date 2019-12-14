@@ -9,7 +9,7 @@ public class Sequence711_713{
     //E7.11
     public boolean equals(Sequence711_713 other){
         boolean equal = false;
-        if (this.size()!=other.size()) return equal;
+        if (this.size()!=other.size()) return false;
         else{
             for(int i = 0; i < this.size(); i++){
                 if (this.get(i) == other.get(i)) equal = true;
