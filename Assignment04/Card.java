@@ -16,7 +16,6 @@ public class Card {
             value = input.substring(0,2);
             suit = input.substring(2);
         }
-        String result;
 
         if (suit.equals("D")){
             if (value.equals("A")) System.out.println("Ace of Diamonds");
