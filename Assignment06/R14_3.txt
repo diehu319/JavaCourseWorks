@@ -1,4 +1,4 @@
-// O(1) < O(log n) < O(n) < O(n * log n) < O(n2) < O(n3) < O(2n)
+// O(1) < O(log n) < O(n) < O(n * log n) < O(n^2) < O(n^3) < O(2^n)
 The order of the growth for the expressions
 a. n^2 + 2n + 1 is O(n^2)
 b. n^10 + 9n^9 + 20n^8 +145n^7 is O(n^10)
@@ -7,6 +7,6 @@ d. (n^2 + n)^2 is O(n^4)
 e. n + 0.001n^3 is O(n^3)
 f. n^3 - 1000n^2 + 10^9 is O(n^3)
 g. n + log(n) is O(log(n))
-h. n^2 + nlog(n) is O(n*log(n))
+h. n^2 + nlog(n) is O(n^2)
 i. 2^n + n^2 is O(2^n)
 j. (n^3 + 2n) / (n^2 + 0.75) is O(n)
