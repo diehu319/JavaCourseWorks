@@ -1,20 +1,20 @@
 import java.util.*;
-public class P75byArrayList {
+public class P75ArrayList {
     public static ArrayList<ArrayList<Integer>> mm = new ArrayList<ArrayList<Integer>>();
 
     public static void main(String[] args) {
-//        int[][] m = {{16,3,2,13}, {5,10,11,8}, {9,6,7,12},{4,15,14,1}};
+//        int[][] m = {{16,3,2,13}, {5,10,11,8}, {9,6,7,12},{4,15,14,1}}; //a 4x4 magic square
 
-        boolean test2 = P75byArrayList.isMagicSquare();
+        boolean test2 = P75ArrayList.isMagicSquare();
 
-        System.out.println( "Is your matrix " + P75byArrayList.toString(mm) + "a magic square? Answer: " + test2 );
+        System.out.println( "Is your matrix " + P75ArrayList.toString(mm) + "a magic square? Answer: " + test2 );
     }
 
     public static boolean isMagicSquare(){
         Scanner in = new Scanner(System.in);
-        ArrayList<Integer> num = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
         for(int i = 0; i < 16; i++){ //16 inputs
-            num.add(0);
+            list.add(0);
         }
 
         ArrayList<Integer> one = new ArrayList<Integer>();
@@ -32,7 +32,7 @@ public class P75byArrayList {
             int index = value - 1;
 
             if (!(value <= 0 || value > 16)){
-                num.set(index, (int) Math.pow(-1, num.get(index)));
+                list.set(index, (int) Math.pow(-1, list.get(index)));
                 mm.get(i/4).add(value);}else{
                 System.out.println("Invalid Input.");
                 i--;
@@ -43,29 +43,29 @@ public class P75byArrayList {
         //check sum of rows & cols
         int sum = 0;
         for (int i = 0; i < mm.size(); i++){
-            int tempSumOfRow = 0;
-            int tempSumOfCol = 0;
+            int rowSum = 0;
+            int colSum = 0;
             for (int j = 0; j < mm.size(); j++){
-                tempSumOfRow += mm.get(i).get(j);
-                tempSumOfCol += mm.get(j).get(i);
+                rowSum += mm.get(i).get(j);
+                colSum += mm.get(j).get(i);
             }
-            if (tempSumOfCol != tempSumOfRow) return false;
-            if (sum == 0) sum = tempSumOfCol;
+            if (rowSum != colSum) return false;
+            if (sum == 0) sum = colSum;
             else{
-                if (sum != tempSumOfRow) return false;
+                if (sum != rowSum) return false;
             }
         }
 
         //diagonals
-        int sumOfDiagOne = 0;
-        int sumOfDiagTwo = 0;
+        int sum1 = 0;
+        int sum2 = 0;
         for (int i = 0; i < mm.size(); i++){
-            sumOfDiagOne += mm.get(i).get(i);
-            sumOfDiagTwo += mm.get(mm.size()-1 - i).get(mm.size()-1 - i);
+            sum1 += mm.get(i).get(i);
+            sum2 += mm.get(mm.size() - 1 - i).get(mm.size() - 1 - i);
         }
-        if (sumOfDiagOne != sumOfDiagTwo) return false;
+        if (sum1 != sum2) return false;
         else{
-            if (sumOfDiagOne != sum) return false;
+            if (sum1 != sum) return false;
         }
         return true;
     }
@@ -80,4 +80,4 @@ public class P75byArrayList {
         }
         return result; // + "\n";
     }
-    }
+}
