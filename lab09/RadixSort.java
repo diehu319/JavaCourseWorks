@@ -4,7 +4,7 @@ import java.util.*;
 public class RadixSort{
   
   public static void main(String[] args){
-    int arr[] = {11,98,11,23,4,5,61,223,452,5};
+    int[] arr = {11,98,11,23,4,5,61,223,452,5};
     int n = arr.length;
     radixsort(arr,n);
     for (int i = 0; i < n; i++){
@@ -12,14 +12,14 @@ public class RadixSort{
     }
   }
   
-  static void radixsort(int arr[], int n){
+  static void radixsort(int[] arr, int n){
     int m = arr[0];
     for (int i = 1; i < n; i++){
       if (arr[i] > m) m = arr[i]; //find the max length number
     }
     for (int exp = 1; m/exp > 0; exp *= 10){
-      int output[] = new int[n]; // create the output as the result.
-      int count[] = new int[10]; // create an array named count length of 10.This count shows the number on the digit.
+      int[] output = new int[n]; // create the output as the result.
+      int[] count = new int[10]; // create an array named count length of 10.This count shows the number on the digit.
       Arrays.fill(count, 0); // make the array count full of 0.
     
       for (int i = 0; i < n; i++){
