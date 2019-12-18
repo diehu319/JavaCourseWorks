@@ -1,22 +1,22 @@
-import java.math.BigInteger;
 import java.util.stream.*;
 import java.util.*;
 
-public class P192 {
+class P192 {
 
-    public static void main(String[] args){
-        BigInteger b = new BigInteger("12321");
-        System.out.println(isPalindrome(b));
+    public static void palindrome() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("How many do you want to see: ");
+        int n = in.nextInt();
 
-        BigInteger two = new BigInteger("2");
-        Stream<BigInteger> stream = Stream.iterate(BigInteger.ONE, bi -> bi.add(BigInteger.ONE));
-        Stream<BigInteger> interm = stream.filter(n -> n.compareTo(BigInteger.ONE) > 0).limit(5);
-        List<BigInteger> ls = interm.collect(Collectors.toList());
-        System.out.println(ls);
+        Stream<Integer> a = Stream.iterate(0, i -> ++i).limit(n);
+        a.mapToInt(num -> num * num).forEach(num -> {
+            String temp = String.valueOf(num);
+            StringBuilder Temp = new StringBuilder(temp);
+            if (temp.compareToIgnoreCase(String.valueOf(Temp.reverse())) == 0) System.out.println(temp + "");
+        });
     }
 
-    public static boolean isPalindrome(BigInteger n){
-        String rev = (new StringBuilder(n.toString())).reverse().toString();
-        return n.toString().equals(rev);
+    public static void main(String [] args) {
+        palindrome();
     }
 }
