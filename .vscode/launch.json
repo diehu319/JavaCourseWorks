@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - E622",
+            "request": "launch",
+            "mainClass": "E622",
+            "projectName": "JavaCourseWorks_6ef9e453"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - E18",
             "request": "launch",
             "mainClass": "E18"
